@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HR Performance Dashboard
+
+This project is a full-featured HR Dashboard built with Next.js (App Router), Tailwind CSS, and JavaScript. It allows HR teams to track employee performance, manage bookmarks, and analyze department trends through an intuitive, responsive interface.
+
+## Tech Stack
+
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- JavaScript (ES6+)
+- Zustand (state management)
+- Chart.js (for analytics)
+- Framer Motion (for tab animations)
+
+## Features
+
+### 1. Dashboard Homepage (`/`)
+- Fetches and displays employee cards from `https://dummyjson.com/users?limit=20`
+- Shows name, email, age, department, and rating
+- Actions: `View`, `Bookmark`, `Promote`
+
+### 2. Search & Filter
+- Real-time search by name, email, or department
+- Multi-select filters for department and rating
+
+### 3. Employee Details Page (`/employee/[id]`)
+- Overview: Full profile with rating, address, bio, phone
+- Projects: List of projects
+- Feedback: Feedback form with validation
+- Tabbed UI with animated transitions (Framer Motion)
+
+### 4. Bookmarks Page (`/bookmarks`)
+- View all bookmarked employees
+- Remove from bookmarks
+- Trigger mock actions like Promote or Assign to Project
+
+### 5. Analytics Page (`/analytics`)
+- Chart.js visualizations:
+  - Department-wise average performance
+  - Bookmark trends
+
+## Bonus Features
+
+- Pagination for homepage employee list
+- Component-level loading and error states
+- Custom hooks: `useBookmarks`, `useSearch`
+- Modular folder structure (`components/`, `hooks/`, `data/`, etc.)
+- Responsive layout with dark/light mode support
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
 
-```bash
+### Installation
+
+git clone https://github.com/your-username/hr-dashboard.git
+cd hr-dashboard
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Folder Structure
+app/: Next.js App Router structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+components/: Reusable UI components (Card, Tabs, Modal, etc.)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+hooks/: Custom hooks like useBookmarks, useSearch
 
-## Learn More
+data/: Mock project and analytics data
 
-To learn more about Next.js, take a look at the following resources:
+lib/: Utility functions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Login Page
+Mock login screen before accessing the dashboard.
+![Dashboard](./screenshots/login-page.png)
+### Dashboard Homepage
+Displays employee cards, search bar, and filters.
 
-## Deploy on Vercel
+![Dashboard](./screenshots/dashboard-home.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Employee Details Page
+Tabbed interface with Overview, Projects, and Feedback.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Employee Details](./screenshots/employee-details.png)
+
+### Projects Tab
+Tabbed interface with Overview, Projects, and Feedback.
+
+![Employee Details](./screenshots/projects-tab.png)
+
+## Feedback Tab
+Tabbed interface with Overview, Projects, and Feedback.
+
+![Employee Details](./screenshots/feedback-tab.png)
+
+## Bookmarks Page
+View and manage bookmarked employees.
+
+![Bookmarks](./screenshots/bookmarks-page.png)
+
+## Analytics Page
+Charts for department ratings and bookmark trends.
+
+![Analytics](./screenshots/analytics-page.png)

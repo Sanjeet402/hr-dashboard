@@ -54,7 +54,7 @@ This project is a full-featured HR Dashboard built with Next.js (App Router), Ta
 
 ### Installation
 
-git clone https://github.com/your-username/hr-dashboard.git 
+git clone https://github.com/Sanjeet402/hr-dashboard.git 
 
 cd hr-dashboard
 

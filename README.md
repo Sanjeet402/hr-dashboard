@@ -54,10 +54,14 @@ This project is a full-featured HR Dashboard built with Next.js (App Router), Ta
 
 ### Installation
 
-git clone https://github.com/your-username/hr-dashboard.git
+git clone https://github.com/your-username/hr-dashboard.git 
+
 cd hr-dashboard
+
 npm install
+
 npm run dev
+
 Visit http://localhost:3000 in your browser.
 
 Folder Structure
@@ -87,12 +91,12 @@ Tabbed interface with Overview, Projects, and Feedback.
 ![Employee Details](./screenshots/employee-details.png)
 
 ### Projects Tab
-Tabbed interface with Overview, Projects, and Feedback.
+Displays mock project assignments under the Projects tab.
 
 ![Employee Details](./screenshots/projects-tab.png)
 
 ## Feedback Tab
-Tabbed interface with Overview, Projects, and Feedback.
+Form interface to submit and validate employee feedback.
 
 ![Employee Details](./screenshots/feedback-tab.png)
 

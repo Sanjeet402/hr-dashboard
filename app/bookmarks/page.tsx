@@ -11,9 +11,26 @@ type Bookmark = {
 };
 
 export function useBookmarks(): { bookmarks: Bookmark[] } {
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
-
-  // your logic here (maybe useEffect to load bookmarks, etc.)
+  const [bookmarks] = useState<Bookmark[]>([
+    {
+      id: '1',
+      name: 'Jane Doe',
+      role: 'Software Engineer',
+      department: 'Engineering',
+      email: 'jane@example.com',
+      age: 28,
+      rating: 4.7,
+    },
+    {
+      id: '2',
+      name: 'John Smith',
+      role: 'Product Manager',
+      department: 'Product',
+      email: 'john@example.com',
+      age: 32,
+      rating: 4.3,
+    },
+  ]);
 
   return { bookmarks };
 }

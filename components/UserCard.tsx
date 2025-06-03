@@ -4,7 +4,7 @@ import { useBookmarks } from '@/hooks/useBookmarks';
 import { useRouter } from 'next/navigation';
 
 type User = {
-  id: string | number;
+  id: string;
   name: string;       // single full name string
   email: string;
   age?: number;       // optional, since it might not be present

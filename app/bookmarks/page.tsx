@@ -19,7 +19,6 @@ export default function BookmarksPage() {
               user={{
                 id: bookmark.id,
                 name: bookmark.name,
-                role: bookmark.role || 'Unknown',  // make sure to provide this
                 email: bookmark.email || '',
                 age: bookmark.age ?? 0,
                 department: bookmark.department,

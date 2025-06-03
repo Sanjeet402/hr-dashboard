@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 type User = {
   id: string | number;
   name: string;       // single full name string
-  role: string;
   email: string;
   age?: number;       // optional, since it might not be present
   department: string;

@@ -19,12 +19,19 @@ type User = {
 
 export default function EmployeeDetailPage() {
   const params = useParams();
-  const { id } = params;
+  const id = params?.id;
+
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    // Mock fetch user by id
     async function fetchUser() {
+      // Check if id exists and is string or number
+      if (typeof id !== 'string' && typeof id !== 'number') {
+        console.error('Invalid or missing user id');
+        setUser(null);
+        return;
+      }
+
       const dummyUser: User = {
         id,
         name: 'John Doe',
@@ -43,6 +50,7 @@ export default function EmployeeDetailPage() {
       };
       setUser(dummyUser);
     }
+
     fetchUser();
   }, [id]);
 

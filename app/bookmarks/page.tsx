@@ -1,8 +1,17 @@
-// app/bookmarks/page.tsx
 'use client';
 
 import { useBookmarks } from '@/hooks/useBookmarks';
 import UserCard from '@/components/UserCard';
+
+// ✅ Define Bookmark type here
+type Bookmark = {
+  id: string;
+  name: string;
+  role: string;
+  department: string;
+  image: string;
+  // Add more fields if UserCard expects them
+};
 
 export default function BookmarksPage() {
   const { bookmarks } = useBookmarks() as { bookmarks: Bookmark[] };

@@ -18,8 +18,7 @@ export default function BookmarksPage() {
               key={bookmark.id}
               user={{
                 id: bookmark.id,
-                firstName: bookmark.name.split(' ')[0],
-                lastName: bookmark.name.split(' ').slice(1).join(' '),
+                name: bookmark.name,           // pass full name here
                 email: bookmark.email || '',
                 age: bookmark.age ?? 0,
                 department: bookmark.department,

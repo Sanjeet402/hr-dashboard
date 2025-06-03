@@ -14,7 +14,7 @@ type User = {
 };
 
 type UserCardProps = {
-  user: Partial<User>;
+  user: User;
   isBookmarkPage?: boolean;
 };
 

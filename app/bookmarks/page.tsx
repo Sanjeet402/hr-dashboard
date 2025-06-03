@@ -1,23 +1,19 @@
-'use client';
+import { useState } from 'react';
 
-import { useBookmarks } from '@/hooks/useBookmarks';
-import UserCard from '@/components/UserCard';
+type Bookmark = {
+  id: string;
+  name: string;
+  role: string;
+  department: string;
+  email?: string;
+  age?: number;
+  rating?: number;
+};
 
-export default function BookmarksPage() {
-  const { bookmarks } = useBookmarks();
+export function useBookmarks(): { bookmarks: Bookmark[] } {
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">📌 Bookmarked Employees</h1>
-      {bookmarks.length === 0 ? (
-        <p className="text-gray-500">No bookmarks yet.</p>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {bookmarks.map((user) => (
-            <UserCard key={user.id} user={user} isBookmarkPage />
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  // your logic here (maybe useEffect to load bookmarks, etc.)
+
+  return { bookmarks };
 }

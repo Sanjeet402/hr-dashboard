@@ -35,8 +35,10 @@ export default function HomePage() {
       const res = await fetch('https://dummyjson.com/users?limit=20');
       const data = await res.json();
 
+
+
       const enriched = data.users.map((user: any, i: number) => ({
-        id: user.id,
+        id: String(user.id),
         firstName: user.firstName,
         lastName: user.lastName,
         name: `${user.firstName} ${user.lastName}`, // ✅ Add this

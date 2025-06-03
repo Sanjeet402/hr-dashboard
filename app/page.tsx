@@ -13,6 +13,7 @@ type User = {
   id: number | string;
   firstName: string;
   lastName: string;
+  name: string; // ✅ Add this
   email: string;
   age: number;
   department: string;
@@ -33,15 +34,18 @@ export default function HomePage() {
     async function fetchUsers() {
       const res = await fetch('https://dummyjson.com/users?limit=20');
       const data = await res.json();
+
       const enriched = data.users.map((user: any, i: number) => ({
         id: user.id,
         firstName: user.firstName,
         lastName: user.lastName,
+        name: `${user.firstName} ${user.lastName}`, // ✅ Add this
         email: user.email,
         age: user.age,
         department: departments[i % departments.length],
         rating: Math.floor(Math.random() * 5) + 1,
       }));
+
       setUsers(enriched);
     }
     fetchUsers();
@@ -57,17 +61,14 @@ export default function HomePage() {
     filteredUsers,
   } = useSearch(users);
 
-  // Pagination calculation
   const totalPages = Math.ceil(filteredUsers.length / USERS_PER_PAGE);
 
-  // Users to display on current page
   const paginatedUsers = filteredUsers.slice(
     (currentPage - 1) * USERS_PER_PAGE,
     currentPage * USERS_PER_PAGE
   );
 
-  // Reset page if filteredUsers length changes and current page is out of range
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(1);
     }

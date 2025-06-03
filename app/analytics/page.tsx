@@ -8,7 +8,7 @@ import { useBookmarks } from '@/hooks/useBookmarks';
 Chart.register(BarElement, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 type User = {
-  id: number;
+  id: string;
   department: string;
   rating: number;
 };

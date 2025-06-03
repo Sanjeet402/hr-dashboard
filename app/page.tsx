@@ -46,7 +46,8 @@ export default function HomePage() {
         rating: Math.floor(Math.random() * 5) + 1,
       }));
 
-      setUsers(enriched);
+      setUsers(enriched as User[]);
+
     }
     fetchUsers();
   }, []);

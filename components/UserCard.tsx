@@ -20,7 +20,9 @@ type UserCardProps = {
 
 export default function UserCard({ user, isBookmarkPage = false }: UserCardProps) {
   const router = useRouter();
-  const { toggleBookmark, isBookmarked } = useBookmarks();
+  const toggleBookmark = useBookmarks(state => state.toggleBookmark);
+  const isBookmarked = useBookmarks(state => state.isBookmarked); // ✅ correct
+
   const bookmarked = isBookmarked(user.id);
 
   return (

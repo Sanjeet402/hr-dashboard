@@ -11,7 +11,8 @@ import CreateUserForm from '@/components/CreateUserForm';
 
 type User = {
   id: number | string;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   age: number;
   department: string;
@@ -34,7 +35,8 @@ export default function HomePage() {
       const data = await res.json();
       const enriched = data.users.map((user: any, i: number) => ({
         id: user.id,
-        name: `${user.firstName} ${user.lastName}`,
+        firstName: user.firstName,
+        lastName: user.lastName,
         email: user.email,
         age: user.age,
         department: departments[i % departments.length],
@@ -109,7 +111,7 @@ export default function HomePage() {
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {paginatedUsers.map(user => (
+            {paginatedUsers.map((user) => (
               <UserCard key={user.id} user={user} />
             ))}
           </div>

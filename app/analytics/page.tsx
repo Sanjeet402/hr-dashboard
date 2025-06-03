@@ -14,7 +14,7 @@ type User = {
 };
 
 export default function AnalyticsPage() {
-  const { bookmarks } = useBookmarks();
+  const { bookmarks } = useBookmarks() as { bookmarks: any[] };
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {

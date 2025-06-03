@@ -5,7 +5,7 @@ import { useBookmarks } from '@/hooks/useBookmarks';
 import UserCard from '@/components/UserCard';
 
 export default function BookmarksPage() {
-  const { bookmarks } = useBookmarks();
+  const { bookmarks } = useBookmarks() as { bookmarks: Bookmark[] };
 
   return (
     <div className="p-6">

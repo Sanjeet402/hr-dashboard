@@ -1,10 +1,24 @@
-// components/UserCard.tsx
 'use client';
 
 import { useBookmarks } from '@/hooks/useBookmarks';
 import { useRouter } from 'next/navigation';
 
-export default function UserCard({ user, isBookmarkPage = false }) {
+type User = {
+  id: string | number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  age: number;
+  department: string;
+  rating?: number;
+};
+
+type UserCardProps = {
+  user: User;
+  isBookmarkPage?: boolean;
+};
+
+export default function UserCard({ user, isBookmarkPage = false }: UserCardProps) {
   const router = useRouter();
   const { toggleBookmark, isBookmarked } = useBookmarks();
   const bookmarked = isBookmarked(user.id);
@@ -15,7 +29,6 @@ export default function UserCard({ user, isBookmarkPage = false }) {
       <p className="text-sm text-gray-500">{user.email}</p>
       <p className="text-sm text-gray-500">Age: {user.age} | Dept: {user.department}</p>
 
-      {/* Stars */}
       <div className="flex my-2">
         {'⭐️'.repeat(user.rating || 0)}
       </div>
@@ -51,8 +64,8 @@ export default function UserCard({ user, isBookmarkPage = false }) {
             >
               {bookmarked ? 'Bookmarked' : 'Bookmark'}
             </button>
-            <button 
-              onClick={() => alert('Promoted!')} 
+            <button
+              onClick={() => alert('Promoted!')}
               className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition"
             >
               Promote

@@ -1,3 +1,5 @@
+'use client'; // 🔥 THIS MUST BE FIRST
+
 import { useState } from 'react';
 
 type Bookmark = {

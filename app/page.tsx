@@ -10,7 +10,7 @@ import Modal from '@/components/Modal';
 import CreateUserForm from '@/components/CreateUserForm';
 
 type User = {
-  id: number | string;
+  id: string;
   firstName: string;
   lastName: string;
   name: string; // ✅ Add this

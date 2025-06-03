@@ -23,7 +23,8 @@ export default function UserCard({ user, isBookmarkPage = false }: UserCardProps
   const toggleBookmark = useBookmarks(state => state.toggleBookmark);
   const isBookmarked = useBookmarks(state => state.isBookmarked); // ✅ correct
 
-  const bookmarked = isBookmarked(user.id);
+  const bookmarked = isBookmarked(String(user.id ?? ''));
+
 
   return (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
